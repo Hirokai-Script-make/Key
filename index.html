@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZynexHub - Script Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+<body>
+    <div id="background"></div>
+
+    <div class="container">
+        <div class="box">
+            <h2>ZynexHub Key System</h2>
+            <p>Get your key from here and use ZynexHub</p>
+        </div>
+
+        <div class="box">
+            <h3>Key:</h3>
+            <pre id="script1">Loading key...</pre>
+            <button class="copy-btn" data-clipboard-target="#script1">Copy</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script>
+        var clipboard = new ClipboardJS('.copy-btn');
+        clipboard.on('success', function(e) {
+            var button = e.trigger;
+            button.textContent = "Copied!";
+            button.style.backgroundColor = "Green";
+            setTimeout(function() {
+                button.textContent = "Copy";
+                button.style.backgroundColor = "";
+            }, 1500);
+        });
+    </script>
+
+    <script>
+        const background = document.getElementById("background");
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDuration = `${Math.random() * 4 + 4}s`;
+            background.appendChild(star);
+        }
+    </script>
+</body>
+</html>
+
+
+
+<script>
+    // Key'i çek ve göster
+    fetch("https://raw.githubusercontent.com/Hirokai-Script-make/Key/refs/heads/main/Key")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("script1").textContent = data.trim();
+        })
+        .catch(error => {
+            document.getElementById("script1").textContent = "Error loading key!";
+            console.error("Key fetch failed:", error);
+        });
+</script>
