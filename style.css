@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0d001a;
+    background-color: #061826; /* nền xanh đậm */
     color: white;
     overflow: hidden;
 }
@@ -20,7 +20,7 @@ body {
     position: absolute;
     width: 2px;
     height: 2px;
-    background: #00ff66;
+    background: #00cfff; /* sao xanh nước biển */
     border-radius: 50%;
     animation: float 8s linear infinite;
     opacity: 0.7;
@@ -35,9 +35,10 @@ body {
     max-width: 400px;
     margin: 80px auto;
     padding: 20px;
-    background-color: #002b11;
+    background-color: rgba(6, 32, 48, 0.9); /* nền trong */
     border-radius: 15px;
-    box-shadow: 0 0 20px #00ff66;
+    box-shadow: 0 0 25px #00cfff;
+    backdrop-filter: blur(8px);
 }
 
 .box {
@@ -45,32 +46,35 @@ body {
 }
 
 h2, h3 {
-    color: #66ff99;
+    color: #66e6ff; /* chữ tiêu đề */
     margin-bottom: 10px;
 }
 
 pre {
-    background-color: #003319;
+    background-color: #0b2c3f;
     padding: 10px;
     border-radius: 8px;
     overflow-x: auto;
     font-size: 14px;
-    color: #b6ffd9;
+    color: #b3f0ff;
+    border: 1px solid #00cfff55;
 }
 
 button {
-    background-color: #00ff66;
+    background: linear-gradient(135deg, #00cfff, #008cff);
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
+    padding: 8px 14px;
+    border-radius: 8px;
     cursor: pointer;
     margin-top: 8px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00cfff88;
 }
 
 button:hover {
-    background-color: #00cc55;
+    transform: scale(1.05);
+    box-shadow: 0 0 18px #00cfff;
 }
 
 @media (max-width: 500px) {
